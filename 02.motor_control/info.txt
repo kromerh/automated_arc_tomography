@@ -1,0 +1,7 @@
+These are the parts ordered from Pololu which I used:
+
+ #2676 Pololu 25D mm Metal Gearmotor Bracket Pair = 7.45
+ #2672 Pololu Aluminum Scooter Wheel Adapter for 4mm Shaft = 9.90
+ #3272 Scooter/Skate Wheel 70×25mm - Black = 4.98
+ #3258 378:1 Metal Gearmotor 25Dx58L mm LP 12V = 19.95
+ #1363 High-Power Simple Motor Controller G2 18v15 = 39.95
