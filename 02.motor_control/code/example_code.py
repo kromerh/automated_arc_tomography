@@ -86,6 +86,7 @@ print("Error status: 0x{:04X}".format(error_status))
 target_speed = smc.get_target_speed()
 print("Target speed is {}.".format(target_speed))
 
-new_speed = 3200 if target_speed <= 0 else -3200
+# new_speed = 3200 if target_speed <= 0 else -3200
+new_speed = 0
 print("Setting target speed to {}.\n".format(new_speed));
 smc.set_target_speed(new_speed)
