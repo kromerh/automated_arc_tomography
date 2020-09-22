@@ -83,9 +83,13 @@ smc.exit_safe_start()
 # error_status = smc.get_error_status()
 # print("Error status: 0x{:04X}".format(error_status))
 
-target_speed = smc.get_target_speed()
-print("Target speed is {}.".format(target_speed))
+# target_speed = smc.get_target_speed()
+# print("Target speed is {}.".format(target_speed))
 
-new_speed = 3200 if target_speed <= 0 else -3200
+# new_speed = 3200 if target_speed <= 0 else -3200
+# print("Setting target speed to {}.\n".format(new_speed));
+smc.set_target_speed(new_speed)
+
+new_speed = 3200
 print("Setting target speed to {}.\n".format(new_speed));
 smc.set_target_speed(new_speed)
