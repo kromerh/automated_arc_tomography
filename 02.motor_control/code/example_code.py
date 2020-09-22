@@ -62,7 +62,7 @@ class SmcG2Serial(object):
 # Linux USB example:  "/dev/ttyACM0"  (see also: /dev/serial/by-id)
 # macOS USB example:  "/dev/cu.usbmodem001234562"
 # Windows example:    "COM6"
-port_name = "/dev/serial0"
+port_name = "/dev/ttyACM0"
 
 # Choose the baud rate (bits per second).  This does not matter if you are
 # connecting to the SMC over USB.  If you are connecting via the TX and RX
