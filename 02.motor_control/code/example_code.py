@@ -62,7 +62,7 @@ class SmcG2Serial(object):
 # Linux USB example:  "/dev/ttyACM0"  (see also: /dev/serial/by-id)
 # macOS USB example:  "/dev/cu.usbmodem001234562"
 # Windows example:    "COM6"
-port_name = "/dev/serial0"
+port_name = "/dev/serial1"
 
 # Choose the baud rate (bits per second).  This does not matter if you are
 # connecting to the SMC over USB.  If you are connecting via the TX and RX
@@ -80,16 +80,16 @@ smc = SmcG2Serial(port, device_number)
 
 smc.exit_safe_start()
 
-# error_status = smc.get_error_status()
-# print("Error status: 0x{:04X}".format(error_status))
+error_status = smc.get_error_status()
+print("Error status: 0x{:04X}".format(error_status))
 
-# target_speed = smc.get_target_speed()
-# print("Target speed is {}.".format(target_speed))
+target_speed = smc.get_target_speed()
+print("Target speed is {}.".format(target_speed))
 
-# new_speed = 3200 if target_speed <= 0 else -3200
-# print("Setting target speed to {}.\n".format(new_speed));
-# smc.set_target_speed(new_speed)
-
-new_speed = 3200
+new_speed = 3200 if target_speed <= 0 else -3200
 print("Setting target speed to {}.\n".format(new_speed));
 smc.set_target_speed(new_speed)
+
+# new_speed = 3200
+# print("Setting target speed to {}.\n".format(new_speed));
+# smc.set_target_speed(new_speed)
