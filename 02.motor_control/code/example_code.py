@@ -88,7 +88,7 @@ smc.exit_safe_start()
 
 # new_speed = 3200 if target_speed <= 0 else -3200
 # print("Setting target speed to {}.\n".format(new_speed));
-smc.set_target_speed(new_speed)
+# smc.set_target_speed(new_speed)
 
 new_speed = 3200
 print("Setting target speed to {}.\n".format(new_speed));
