@@ -16,7 +16,7 @@ MODE = "LOCAL"
 
 # database connection
 PATH_CREDENTIALS_PSI = '~/credentials.pw'
-PATH_CREDENTIALS_LOCAL = '/Users/hkromer/02_PhD/01.github/FNL_Neutron_Generator_Control/credentials.pw'
+PATH_CREDENTIALS_LOCAL = '/home/pi/credentials.pw'
 
 PATH_CREDENTIALS = PATH_CREDENTIALS_PSI if MODE == 'PSI' else PATH_CREDENTIALS_LOCAL
 
