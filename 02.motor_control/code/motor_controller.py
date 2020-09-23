@@ -4,6 +4,7 @@ import serial
 import numpy as np
 import pandas as pd
 from time import sleep
+import datetime
 
 sys.path.insert(1, '/home/pi/automated_arc_tomography/02.motor_control/code/')
 
@@ -96,8 +97,8 @@ def log_to_database(sql_engine, command, response):
 		- command: command that was sent to the motor
 		- response: response from the motor
 	"""
-
-	query = f"""INSERT INTO arc_motor_log (sent_to_motor, response) VALUES (\"{command}\", \"{response}\");"""
+	time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+	query = f"""INSERT INTO arc_motor_log (time, sent_to_motor, response) VALUES (\"{time}\", \"{command}\", \"{response}\");"""
 	sql_engine.execute(query)
 
 
