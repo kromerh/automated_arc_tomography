@@ -10,7 +10,8 @@ sys.path.insert(1, '/home/pi/automated_arc_tomography/02.motor_control/code/')
 from SmcG2Serial import SmcG2Serial
 
 # local or remote (PSI) mode
-MODE = "PSI"
+# MODE = "PSI"
+MODE = "LOCAL"
 
 
 # database connection
