@@ -144,6 +144,9 @@ def get_commands(sql_engine):
 
 while True:
 	try:
+		# initialize motor
+		smc = initialize_motor(PORT_NAME, BAUD_RATE)
+
 		# connect to the database
 		sql_engine = connect_database(PATH_CREDENTIALS)
 
