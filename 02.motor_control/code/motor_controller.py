@@ -35,7 +35,7 @@ def read_last_response(sql_engine):
 	"""
 	query = f"SELECT sent_to_motor, response FROM arc_motor_log ORDER BY id DESC LIMIT 1;"
 	df = pd.read_sql(query, sql_engine)
-	print(df)
+	# print(df)
 	sent_to_motor = df['sent_to_motor'].values[0]
 
 	response = df['response'].values[0]
@@ -139,10 +139,10 @@ def control_motor(sql_engine, speed, direction):
 	if (command == sent_to_motor) and (response == response_db):
 		pass
 	else:
-		print(command)
-		print(sent_to_motor)
-		print(response)
-		print(response_db)
+		# print(command)
+		# print(sent_to_motor)
+		# print(response)
+		# print(response_db)
 		log_to_database(sql_engine, command, response)
 
 
