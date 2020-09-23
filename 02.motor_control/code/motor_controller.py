@@ -28,6 +28,20 @@ BAUD_RATE = 9600
 DEVICE_NUMBER = None
 
 
+# read last response from the database
+def read_last_response(sql_engine):
+	"""
+	Reads the last response from the database, if it is the same as the current one, do not add it.
+	"""
+	query = f"SELECT sent_to_motor, response FROM arc_motor_log ORDER BY id DESC LIMIT 1;"
+	df = pd.read_sql(query, sql_engine)
+	print(df)
+	sent_to_motor = df['sent_to_motor'].values[0]
+
+	response = df['response'].values[0]
+
+	return sent_to_motor, response
+
 
 # connect to the database
 def connect_database(path_credentials):
@@ -119,7 +133,17 @@ def control_motor(sql_engine, speed, direction):
 	# log into database
 	command = f"Speed: {speed}"
 	response = f"Speed: {target_speed}; Error: {error_status}"
-	log_to_database(sql_engine, command, response)
+
+	# read the last response in the log, if it is the same, do not log
+	sent_to_motor, response_db = read_last_response(sql_engine)
+	if (command == sent_to_motor) and (response == response_db):
+		pass
+	else:
+		print(command)
+		print(sent_to_motor)
+		print(response)
+		print(response_db)
+		log_to_database(sql_engine, command, response)
 
 
 def get_commands(sql_engine):
