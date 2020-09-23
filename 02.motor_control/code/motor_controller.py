@@ -100,7 +100,7 @@ def control_motor(sql_engine, speed, direction):
 	speed = int(np.abs(speed))
 
 	# limit speed to 3200 at most
-	speed = np.max(speed, 3200)
+	speed = max(speed, 3200)
 
 	# if direction is negative, add make speed negative
 	if direction < 0:
