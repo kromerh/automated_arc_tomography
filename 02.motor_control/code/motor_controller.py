@@ -156,7 +156,7 @@ while True:
 		# Send to motor
 		control_motor(sql_engine, speed, direction)
 
-        sleep(1) # sleep for 1 second
+		sleep(1) # sleep for 1 second
 
 	except KeyboardInterrupt:
 		print('Ctrl + C. Exiting.')
